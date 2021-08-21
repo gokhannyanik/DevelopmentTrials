@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DevelopmentTrials.DataAccessLayer.Interfaces
 {
-    public interface IUserService : ICreateService<UserCreateModel>
+    public interface IUserService : ICreateService<UserCreateModel>,IUpdateService<UserUpdateModel>
     {
     }
 }

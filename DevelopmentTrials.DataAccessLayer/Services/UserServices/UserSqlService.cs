@@ -19,5 +19,10 @@ namespace DevelopmentTrials.DataAccessLayer.Services.UserServices
         {
             _sqlService.ExecuteCommand($"INSERT INTO Users (FullName, Birthday, Email) VALUES('{entity.FullName}', '{entity.BirthDate.ToString("yyyy-MM-dd HH:mm:ss.fff")}', '{entity.Email}'); ");
         }
+
+        public void Update(UserUpdateModel entity)
+        {
+            _sqlService.ExecuteCommand($"UPDATE Users SET FullName='{entity.FullName}', Birthday='{entity.BirthDate.ToString("yyyy-MM-dd HH:mm:ss.fff")}' WHERE Email = '{entity.Email}'");
+        }
     }
 }

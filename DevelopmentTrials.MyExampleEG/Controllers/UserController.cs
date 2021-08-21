@@ -14,7 +14,7 @@ namespace DevelopmentTrials.MyExampleEG.Controllers
 
         public UserController(IUserService userService)
         {
-            this._userService = userService;
+            _userService = userService;
         }
 
         public IActionResult Index()
@@ -27,6 +27,10 @@ namespace DevelopmentTrials.MyExampleEG.Controllers
             _userService.Create(user);
             return View();
         }
-
+        public IActionResult Update(UserUpdateModel user)
+        {
+            _userService.Update(user);
+            return View();
+        }
     }
 }
