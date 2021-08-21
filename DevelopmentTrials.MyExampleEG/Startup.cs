@@ -1,3 +1,6 @@
+using DevelopmentTrials.DataAccessLayer.Interfaces;
+using DevelopmentTrials.DataAccessLayer.Services.DatabaseServices;
+using DevelopmentTrials.DataAccessLayer.Services.UserServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +27,8 @@ namespace DevelopmentTrials.MyExampleEG
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddScoped<ISqlService, SqlService>();
+            services.AddScoped<IUserService, UserSqlService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
