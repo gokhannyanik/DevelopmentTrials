@@ -1,6 +1,8 @@
 using DevelopmentTrials.DataAccessLayer.Interfaces;
 using DevelopmentTrials.DataAccessLayer.Services.DatabaseServices;
 using DevelopmentTrials.DataAccessLayer.Services.UserServices;
+using DevelopmentTrials.MessageBroker.Interfaces;
+using DevelopmentTrials.MessageBroker.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +31,7 @@ namespace DevelopmentTrials.MyExampleEG
             services.AddControllersWithViews();
             services.AddScoped<ISqlService, SqlService>();
             services.AddScoped<IUserService, UserSqlService>();
+            services.AddScoped<IMessageBrokerService, RabbitMqService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
