@@ -22,5 +22,8 @@ namespace DevelopmentTrials.MyExampleEG
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+
+
     }
 }
